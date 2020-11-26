@@ -23,7 +23,8 @@ const mapStateToProps = (state: stateInterface) => ({
 })
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<stateInterface, {}, AnyAction>) => ({
-  addDeclarativeDetail: (type: string, content:string) => new Promise((resolve) => resolve({ type, content }))
+  addDeclarativeDetail: (type: string, content:string) => new Promise((resolve) => resolve({ type, content })),
+  deleteDeclarativeDetail: (key: string) => new Promise((resolve) => resolve({ key }))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataVaultComponent)

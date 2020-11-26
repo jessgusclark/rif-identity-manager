@@ -10,6 +10,10 @@ button:focus {
   outline: none;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
 button.full {
   width: 100%;
 }
@@ -34,10 +38,9 @@ button.turquoise:hover {
 
 button.blue:disabled, button[disabled].blue {
   background-color: gray !important;
-  cursor: not-allowed;
 }
 
-button.gray:hover {
+button.gray:hover:not(:disabled) {
   background-color: $gray;
   color: $white;
 }

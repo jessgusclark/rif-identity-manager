@@ -5,9 +5,12 @@ import AddDeclarativeDetails from './panels/AddDeclarativeDetails'
 interface DataVaultComponentProps {
   declarativeDetails: DeclarativeDetailInterface[],
   addDeclarativeDetail: (key: string, content: string) => Promise<any>
+  deleteDeclarativeDetail: (key: string) => Promise<any>
 }
 
-const DataVaultComponent: React.FC<DataVaultComponentProps> = ({ addDeclarativeDetail, declarativeDetails }) => {
+const DataVaultComponent: React.FC<DataVaultComponentProps> = ({
+  addDeclarativeDetail, declarativeDetails, deleteDeclarativeDetail
+}) => {
   return (
     <div className="content data-vault">
       <div className="container">
@@ -17,7 +20,9 @@ const DataVaultComponent: React.FC<DataVaultComponentProps> = ({ addDeclarativeD
       </div>
       <div className="container">
         <div className="column">
-          <DeclarativeDetailsDisplay details={declarativeDetails} />
+          <DeclarativeDetailsDisplay
+            details={declarativeDetails}
+            handleDelete={deleteDeclarativeDetail} />
         </div>
       </div>
     </div>

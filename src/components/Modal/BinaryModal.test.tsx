@@ -37,4 +37,11 @@ describe('Component: BinaryModal', () => {
     expect(wrapper.find('button.deny').text()).toBe(strings.deny)
     expect(wrapper.find('button.confirm').text()).toBe(strings.confirm)
   })
+
+  it('disables the buttons when set', () => {
+    const wrapper = mount(<BinaryModal show={true} onConfirm={jest.fn()} onClose={jest.fn()} disabled={true} />)
+
+    expect(wrapper.find('button.deny').props().disabled).toBe(true)
+    expect(wrapper.find('button.confirm').props().disabled).toBe(true)
+  })
 })

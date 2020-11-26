@@ -6,19 +6,30 @@ import trash from '../../../assets/images/icons/trash.svg'
 import BinaryModal from '../../../components/Modal/BinaryModal'
 
 export interface DeclarativeDetailInterface {
-  key: string;
-  type: string;
-  content: string;
-  handleDelete: (key: string) => Promise<any>
+  key: string
+  type: string
+  content: string
 }
 
 interface DeclarativeDetailsDisplayInterface {
   details?: DeclarativeDetailInterface[]
+  handleDelete: (key: string) => Promise<any>
 }
 
 const DeclarativeDetailsDisplay: React.FC<DeclarativeDetailsDisplayInterface> = ({ details, handleDelete }) => {
   const [deleteItem, setDeleteItem] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const title = <><img src={declarativeIcon} /> Declarative Details</>
+
+  const handleDeleteItem = () => {
+    setIsLoading(true)
+    deleteItem && handleDelete(deleteItem)
+      .then(() => {
+        setDeleteItem(null)
+        setIsLoading(false)
+      })
+  }
+
   return (
     <Panel title={title} className="display">
       <table>
@@ -35,8 +46,8 @@ const DeclarativeDetailsDisplay: React.FC<DeclarativeDetailsDisplayInterface> = 
               <td>{item.type}</td>
               <td>{item.content}</td>
               <td>
-                <button className="icon"><img src={pencilIcon} alt="Edit" /></button>
-                <button className="icon" onClick={() => setDeleteItem(item.key)}>
+                <button className="edit icon"><img src={pencilIcon} alt="Edit" /></button>
+                <button className="delete icon" onClick={() => setDeleteItem(item.key)}>
                   <img src={trash} alt="Delete" />
                 </button>
               </td>
@@ -47,10 +58,12 @@ const DeclarativeDetailsDisplay: React.FC<DeclarativeDetailsDisplayInterface> = 
 
       <BinaryModal
         title="Are you sure you want to delete?"
+        className="delete-modal"
         show={!!deleteItem}
         strings={{ text: 'Do you want to delete this item from the data vault?', confirm: 'Yes', deny: 'No' }}
         onClose={() => setDeleteItem(null)}
-        onConfirm={handleDelete}
+        onConfirm={handleDeleteItem}
+        disabled={isLoading}
       />
     </Panel>
   )
