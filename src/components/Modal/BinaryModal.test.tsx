@@ -1,7 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import BinaryModal from './BinaryModal'
-import { wrap } from 'module'
 
 describe('Component: BinaryModal', () => {
   it('renders the component with default text', () => {

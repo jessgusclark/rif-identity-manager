@@ -6,10 +6,11 @@ interface DataVaultComponentProps {
   declarativeDetails: DeclarativeDetailInterface[],
   addDeclarativeDetail: (key: string, content: string) => Promise<any>
   deleteDeclarativeDetail: (key: string) => Promise<any>
+  editDeclaarativeDetail: (detail: DeclarativeDetailInterface) => Promise<any>
 }
 
 const DataVaultComponent: React.FC<DataVaultComponentProps> = ({
-  addDeclarativeDetail, declarativeDetails, deleteDeclarativeDetail
+  addDeclarativeDetail, declarativeDetails, deleteDeclarativeDetail, editDeclaarativeDetail
 }) => {
   return (
     <div className="content data-vault">
@@ -22,7 +23,9 @@ const DataVaultComponent: React.FC<DataVaultComponentProps> = ({
         <div className="column">
           <DeclarativeDetailsDisplay
             details={declarativeDetails}
-            handleDelete={deleteDeclarativeDetail} />
+            handleDelete={deleteDeclarativeDetail}
+            handleEdit={editDeclaarativeDetail}
+          />
         </div>
       </div>
     </div>

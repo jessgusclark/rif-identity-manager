@@ -22,9 +22,12 @@ const mapStateToProps = (state: stateInterface) => ({
   declarativeDetails: mockDeclarativeDetials
 })
 
+// mock promise returns until code is implemented
 const mapDispatchToProps = (dispatch: ThunkDispatch<stateInterface, {}, AnyAction>) => ({
   addDeclarativeDetail: (type: string, content:string) => new Promise((resolve) => resolve({ type, content })),
-  deleteDeclarativeDetail: (key: string) => new Promise((resolve) => resolve({ key }))
+  deleteDeclarativeDetail: (key: string) => new Promise((resolve) => resolve(key)),
+  editDeclaarativeDetail: (detail: DeclarativeDetailInterface) =>
+    new Promise((resolve, reject) => reject(new Error('ohh no!'))) // resolve(detail))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataVaultComponent)
