@@ -1,3 +1,19 @@
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  transition: 0.5s
+}
+
+button:focus {
+  outline: none;
+}
+
+button.full {
+  width: 100%;
+}
+
 button.blue {
   color: $white;
   background-color: $blue;
@@ -16,10 +32,14 @@ button.turquoise:hover {
   background-color: $blue;
 }
 
-
 button.blue:disabled, button[disabled].blue {
   background-color: gray !important;
   cursor: not-allowed;
+}
+
+button.gray:hover {
+  background-color: $gray;
+  color: $white;
 }
 
 button.circle-plus {
@@ -32,10 +52,21 @@ button.circle-plus {
   vertical-align: middle;
   background: $lightGray;
   border: 1px solid $gray;
-  cursor: pointer;
 }
 
 button.circle-plus:hover {
   background-color: $turquoise;
   color: $white;
+}
+
+button.icon {
+  background: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+button.icon:hover {
+  background-color: $lightGray;
 }
