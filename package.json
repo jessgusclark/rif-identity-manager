@@ -2,6 +2,7 @@
   "name": "rif-identity-manager",
   "version": "0.0.1",
   "private": true,
+  "homepage": "http://identity.developerjesse.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -10,7 +11,9 @@
     "test:coverage": "react-scripts test --verbose --coverage --watchAll=false",
     "test:ci": "react-scripts test --verbose --coverage --watchAll=false --coverageDirectory reports --maxWorkers=2",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint:ci": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --format junit --output-file ./reports/eslint.xml"
+    "lint:ci": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --format junit --output-file ./reports/eslint.xml",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
@@ -55,6 +58,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
     "node-sass": "4.14.1",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
