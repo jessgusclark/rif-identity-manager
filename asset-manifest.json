@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fde87a5f.chunk.css",
+    "main.js": "/static/js/main.f830a860.chunk.js",
+    "main.js.map": "/static/js/main.f830a860.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.db58a441.js",
+    "runtime-main.js.map": "/static/js/runtime-main.db58a441.js.map",
+    "static/js/2.b6029874.chunk.js": "/static/js/2.b6029874.chunk.js",
+    "static/js/2.b6029874.chunk.js.map": "/static/js/2.b6029874.chunk.js.map",
+    "static/js/3.d2cf113b.chunk.js": "/static/js/3.d2cf113b.chunk.js",
+    "static/js/3.d2cf113b.chunk.js.map": "/static/js/3.d2cf113b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.fde87a5f.chunk.css.map": "/static/css/main.fde87a5f.chunk.css.map",
+    "static/js/2.b6029874.chunk.js.LICENSE.txt": "/static/js/2.b6029874.chunk.js.LICENSE.txt",
+    "static/media/powered-by-iov-gray.e25db553.svg": "/static/media/powered-by-iov-gray.e25db553.svg",
+    "static/media/powered-by-iov.a0397e40.svg": "/static/media/powered-by-iov.a0397e40.svg",
+    "static/media/rif-id-manager-gray.d70174d8.svg": "/static/media/rif-id-manager-gray.d70174d8.svg",
+    "static/media/rif-id-manager.7afc1cbb.svg": "/static/media/rif-id-manager.7afc1cbb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.db58a441.js",
+    "static/js/2.b6029874.chunk.js",
+    "static/css/main.fde87a5f.chunk.css",
+    "static/js/main.f830a860.chunk.js"
+  ]
+}
